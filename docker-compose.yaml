@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+
+  wordpress:
+    image: wordpress:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: lapopsi
+      WORDPRESS_DB_PASSWORD: lapopsi
+      WORDPRESS_DB_NAME: lapopsidb
+    volumes:
+      - wordpress:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: lapopsidb
+      MYSQL_USER: lapopsi
+      MYSQL_PASSWORD: lapopsi
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db-data:

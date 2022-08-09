@@ -1,0 +1,190 @@
+body .vc_shortcodes_container {
+	background: none;
+}
+body .vc_shortcodes_container .wpb_column_container {
+	padding-left: 4px;
+}
+/* VC custom table field */
+.anps_custom_val {
+    display: none;
+}
+.anps-table-field {
+    position: relative;
+}
+.anps-table-field:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+.anps-table-field-vals th {
+    color: #000;
+    font-size: 14px;
+}
+.anps-table-field-vals td {
+    color: #555;
+    font-size: 12px;
+}
+.anps-table-field-vals,
+.anps-table-field-add-rows,
+.anps-table-field-remove-cells {
+    width: 90%;
+    margin-left: 5%;
+}
+.anps-table-field-add-cells,
+.anps-table-field-remove-rows {
+    bottom: 32px;
+    position: absolute;
+    width: 5%;
+    top: 37px;
+}
+.anps-table-field-add-cells button,
+.anps-table-field-add-rows button {
+    color: green;
+}
+.anps-table-field-remove-cells button,
+.anps-table-field-remove-rows button {
+    color: red;
+}
+.anps-table-field-add-cells {
+    right: 0;
+}
+.anps-table-field-remove-rows {
+    left: 0;
+}
+.anps-table-field-remove-rows button {
+    height: 40px;
+}
+.anps-table-field-add-rows {
+    text-align: center;
+}
+.anps-table-field button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+}
+.anps-table-field-add-cells button,
+.anps-table-field-add-rows button,
+.anps-table-field-remove-cells button {
+    height: 100%;
+}
+[name="icon"] {
+    font-family: FontAwesome;
+}
+
+.anps-input {
+    overflow: hidden;
+    position: relative;
+
+    $g: &;
+
+    &__hidden {
+        display: none;
+    }
+
+    &__active {
+        appearance: none;
+        background: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-style: none solid;
+        color: #333;
+        cursor: pointer;
+        height: 34px;
+        font-size: 15px;
+        line-height: 34px;
+        outline: none;
+        position: relative;
+        text-align: center;
+        transition: .2s opacity;
+        width: 45px;
+        z-index: 5;
+
+        &:hover,
+        &:focus {
+            i, &::after {
+                opacity: .7;
+            }
+        }
+
+        #{$g}__select--active & {
+            color: transparent;
+
+            &::after {
+                color: #000;
+                content: "\00d7";
+                font-size: 21px;
+                font-weight: bold;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &__select {
+        position: absolute;
+        right: 0;
+        top: 1px;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 45px;
+        top: 0;
+        transform: translateX(100%);
+        transition: .4s transform;
+        width: 200px;
+        z-index: 1;
+
+        #{$g}__select--active & {
+            transform: translateX(0);
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+
+        &--active #{$g}__button {
+            background-color: #00aef0;
+            color: #fff;
+        }
+    }
+
+    &__button {
+        appearance: none;
+        background: none;
+        border: none;
+        border-left: 1px solid #ddd;
+        color: #555;
+        cursor: pointer;
+        font-size: 17px;
+        line-height: 34px;
+        padding: 0;
+        text-align: center;
+        transition: .2s color, .3s background-color;
+        width: 50px;
+
+        &:hover,
+        &:focus {
+            background-color: #00aef0;
+            color: #fff;
+        }
+    }
+}
+
+i[class*="anps-icon-"] {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    display: block;
+    height: 100%;
+    width: 100%;
+}

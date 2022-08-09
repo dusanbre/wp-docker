@@ -1,0 +1,42 @@
+.site-search {
+    background-color: var(--anps-header-search-text-color);
+    height: 0;
+    overflow: hidden;
+    transition: .3s height ease-in-out;
+
+    &__form {
+        align-items: center;
+        display: flex;
+        padding: 20px 0;
+    }
+
+    &__field {
+        appearance: none;
+        background: none;
+        border: none;
+        font-size: 18px;
+        outline: none;
+        padding: 12px 0;
+        width: 100%;
+
+        &::placeholder {
+            color: var(--anps-header-search-background-color);
+        }
+    }
+
+    &__submit {
+        appearance: none;
+        background: none;
+        border: none;
+        color: var(--anps-header-search-background-color);
+        font-size: 18px;
+        outline: none;
+        padding: 0;
+        transition: .2s color ease-in-out;
+
+        &:hover,
+        &:focus {
+            opacity: .8;
+        }
+    }
+}

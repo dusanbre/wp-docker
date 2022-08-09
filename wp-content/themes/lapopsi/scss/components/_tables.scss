@@ -1,0 +1,122 @@
+/* ## Tables */
+
+table.table {
+    border: 1px solid $border-color;
+    margin-bottom: 45px;
+}
+
+.table-responsive {
+    border-color: $border-color;
+}
+
+table.table > tbody,
+table.table > tfoot,
+table.table > thead {
+    border: none;
+
+    td,
+    th {
+        border-color: $border-color;
+        padding: 15px 20px;
+    }
+
+    td {
+        position: relative;
+    }
+
+    &.bg-primary tr,
+    tr.bg-primary {
+        td,
+        th {
+            color: #fff;
+        }
+    }
+
+    th {
+        text-align: center;
+    }
+}
+
+table.table > thead {
+    th {
+        border: none;
+        position: relative;
+    }
+}
+
+table.table-bordered > tbody,
+table.table-bordered > tfoot,
+table.table-bordered > thead {
+    th {
+        border: 1px solid $border-color;
+    }
+
+    td,
+    th {
+        &::after,
+        &::before {
+            background-color: #fff;
+            content: "";
+            height: 1px;
+            position: absolute;
+            top: -1px;
+            width: 2px;
+        }
+
+        &::after {
+            right: 0;
+        }
+
+        &::before {
+            left: 0;
+        }
+    }
+}
+
+table.table.table-bordered tr {
+    *:first-child::before {
+        display: none;
+    }
+
+    *:last-child::after {
+        display: none;
+    }
+}
+
+table.table.table-bordered thead tr {
+    &:first-of-type {
+        td,
+        th {
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .table-responsive table.table {
+        border: none;
+    }
+
+    .table-responsive tbody tr:first-child > * {
+        border-top: none;
+    }
+}
+
+.table-striped > tbody > tr {
+    background-color: #f7f7f7;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+table:not([class]):not([id]) {
+    td,
+    th {
+        border: 1px solid $border-color;
+        padding: 10px 15px;
+    }
+}

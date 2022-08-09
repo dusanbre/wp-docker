@@ -1,0 +1,80 @@
+/* ## Social */
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: -5px 0 0;
+    padding: 0;
+
+    a {
+        @include transition;
+        border-radius: 4px;
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        margin: 5px 10px 5px 0;
+        position: relative;
+        text-align: center;
+        width: 35px;
+        font-size: 16px;
+    }
+
+    a[style] {
+        transition: .2s opacity;
+
+        &:focus,
+        &:hover {
+            opacity: .7;
+        }
+    }
+
+    i {
+        display: block;
+        line-height: 35px;
+    }
+}
+
+.social.social-minimal {
+    a {
+        background: none !important;
+        font-size: 19px;
+        height: auto;
+        line-height: 22px;
+        margin: 5px 20px 5px 0;
+        width: auto;
+    }
+}
+
+.social.social-border {
+    a {
+        background: none !important;
+        border-style: solid;
+        border-width: 2px;
+    }
+}
+
+.social.social-circle {
+    a {
+        border-radius: 50%;
+    }
+}
+
+.social.social-circle-border {
+    a {
+        background: none !important;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 2px;
+    }
+}
+
+.top-bar .social {
+    a {
+        height: 30px;
+        line-height: 30px;
+        margin: 5px 10px 5px 0;
+        width: 30px;
+        font-size: 16px;
+    }
+}

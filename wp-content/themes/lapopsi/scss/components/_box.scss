@@ -1,0 +1,38 @@
+.anps-box {
+    &--shadow {
+        @include box-shadow;
+    }
+
+    &__wrap {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        > *:first-child {
+            margin-top: 0;
+        }
+
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--border .anps-box {
+        @media(min-width: 767px){
+            border-right: 1px solid #f2f2f2;
+        }
+    }
+
+    &--border > div:last-child .anps-box {
+        border-right: 0;
+    }
+}
+
+a.anps-box__img {
+    transition: .2s opacity;
+
+    &:hover,
+    &:focus {
+        opacity: .85;
+    }
+}

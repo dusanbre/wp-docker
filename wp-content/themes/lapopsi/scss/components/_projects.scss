@@ -1,0 +1,371 @@
+/* ## Projects */
+
+/* ### Filter */
+
+.filter {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+
+    li {
+        display: flex;
+        float: left;
+        list-style: none;
+    }
+
+    button {
+        @include transition;
+
+        &:focus {
+            outline: none;
+        }
+
+        &.selected {
+            cursor: default;
+        }
+    }
+}
+
+/* ### Hidden version */
+
+.filter-hidden {
+    display: none;
+}
+
+/* ### Normal filter version */
+
+.filter:not(.filter-dark) {
+    border: 1px solid $border-color;
+    border-bottom: none;
+    overflow: hidden;
+
+    li {
+        position: relative;
+        width: 50%;
+
+        @media (min-width: $screen-sm) {
+            width: 33.3333%;
+        }
+
+        @media (min-width: $screen-md) {
+            width: auto;
+        }
+
+        &::after,
+        &::before {
+            background-color: $border-color;
+            content: "";
+            position: absolute;
+            z-index: 1;
+        }
+
+        &::after {
+            bottom: 0;
+            height: 1px;
+            left: 0;
+            width: 200vw;
+        }
+
+        &::before {
+            height: 100%;
+            right: 0;
+            top: 0;
+            width: 1px;
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: #999;
+        font-size: 14px;
+        padding: 17px 14px;
+        text-align: center;
+        width: 100%;
+
+        @media (min-width: $screen-md) {
+            padding: 17px 25px;
+            width: auto;
+        }
+
+        &:hover,
+        &:focus,
+        &.selected {
+            background-color: #f8f8f8;
+        }
+    }
+}
+
+/* ### Dark filter version */
+
+.filter-dark {
+    @media (max-width: ($screen-md - 1px)) {
+        width: 100%;
+    }
+
+    li {
+        margin-top: 1px;
+
+        + li {
+            margin-left: 1px;
+        }
+
+        @media (min-width: $screen-md) {
+            margin-top: 0;
+        }
+    }
+
+    button {
+        background-color: rgba(0, 0, 0, .3);
+        border: none;
+        padding: 15px;
+        width: 100%;
+
+        @media (min-width: $screen-md) {
+            padding: 70px 30px 23px;
+            width: auto;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: rgba(0, 0, 0, .5);
+            outline: none;
+        }
+
+        &.selected {
+            background-color: rgba(0, 0, 0, .5);
+        }
+    }
+}
+
+/* ### Content */
+
+.projects-content {
+    margin-top: 10px;
+    overflow: hidden;
+
+    .projects-item {
+        margin-top: 30px;
+        transition: opacity .5s !important;
+    }
+}
+
+/* ### Title */
+
+.projects-title {
+    margin-bottom: 0;
+    margin-top: 70px;
+}
+
+/* ### Pagination */
+
+.projects-pagination {
+    color: #fff;
+    display: block;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    text-align: center;
+
+    > button {
+        background: none;
+        border: 1px solid;
+        border-radius: 3px;
+        color: inherit;
+        display: inline-block;
+        height: 37px;
+        opacity: .15;
+        position: relative;
+        width: 37px;
+
+        &:hover,
+        &:focus {
+            opacity: .2;
+            outline: none;
+        }
+
+        + button {
+            margin-left: 3px;
+        }
+
+        i {
+            font-size: 18px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+    }
+}
+
+/* ### Hover */
+
+.project-hover,
+.project-hover-bg,
+.projects-item-wrap::after {
+    opacity: 0;
+}
+
+.bg-dark .projects-item:hover .project-hover p {
+    color: #fff;
+}
+
+.project-hover,
+.project-hover-bg {
+    transition: .3s opacity;
+}
+
+@mixin projects-mobile {
+    bottom: auto;
+    left: 50%;
+    line-height: 1em;
+    padding: 15px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+
+    p {
+        display: none;
+    }
+
+    .btn {
+        background: none !important;
+        height: 600px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        text-indent: -99999px;
+        top: -300px;
+    }
+
+    .project-title {
+        font-size: 21px !important;
+        line-height: 1.3em;
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+}
+
+.project-hover {
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+
+    @media (min-width: $screen-md) {
+        padding: 40px;
+    }
+
+    .projects-mobile & {
+        @include projects-mobile;
+    }
+
+    @media (max-width: ($screen-sm - 1px)) {
+        @include projects-mobile;
+    }
+
+    .btn {
+        line-height: 1em;
+        font-size: 15px;
+    }
+}
+
+/* ### Hover small */
+
+.project-hover-small {
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: .4s opacity;
+    width: 100%;
+    z-index: 9;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+
+    .fa {
+        color: #fff;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.projects-item {
+    @media (max-width: 400px) { width: 100%; }
+
+    &:hover,
+    &:focus {
+        .project-hover,
+        .projects-item-wrap::after {
+            opacity: 1;
+        }
+
+        .project-hover-bg {
+            opacity: 1;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .project-desc {
+        color: #fff;
+        display: none;
+        font-size: 15px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+
+        @media (min-width: $screen-lg) { display: block; }
+    }
+
+    .project-title {
+        font-size: 14px;
+        margin: 20px 0 25px;
+
+        @media (min-width: $screen-md) {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+    }
+}
+
+.project-hover-bg {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7);
+
+    @media (min-width: $screen-sm) {
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 100%);
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.6) 60%,rgba(0,0,0,0.9) 100%);
+        background: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.6) 60%,rgba(0,0,0,0.9) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a000000', endColorstr='#e6000000',GradientType=0 );
+    }
+}
+
+.projects-item-wrap {
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+        border: 3px solid rgba(255, 255, 255, .05);
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+}

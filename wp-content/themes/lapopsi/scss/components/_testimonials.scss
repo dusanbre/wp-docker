@@ -1,0 +1,235 @@
+/* ## Testimonials  */
+
+.testimonials {
+    margin-top: 0;
+    position: relative;
+}
+
+ul.testimonial-wrap {
+    list-style: none;
+    padding-left: 0;
+
+    .rating {
+        font-family: "FontAwesome";
+        font-size: 12px;
+    }
+
+    li {
+        margin: 0;
+        padding-bottom: 0;
+        padding-top: 17px;
+        position: relative;
+    }
+
+    li > p {
+        color: $text-gray;
+        line-height: 1.65em;
+        margin-bottom: 30px;
+    }
+
+    .user {
+        display: table;
+        margin-bottom: 13px;
+        position: relative;
+
+        .content {
+            display: table-cell;
+            margin-top: 0;
+            vertical-align: top;
+
+            > * {
+                @media (min-width: 600px) {
+                    padding-left: 32px;
+                    padding-right: 32px;
+                }
+            }
+
+            > h3 {
+                margin-top: 0;
+            }
+        }
+
+        .user-image {
+            display: none;
+            max-width: 50%;
+            min-width: 253px;
+            vertical-align: top;
+
+            @media (min-width: 600px) {
+                display: table-cell;
+            }
+        }
+    }
+
+    .owl-item.active + .owl-item.active .user .content > * {
+        @media (min-width: 600px) {
+            padding-right: 0;
+        }
+    }
+
+    .user-data {
+        padding-left: 18px;
+
+        .name-user {
+            font-size: 16px;
+            left: 0;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+
+            @media (min-width: 600px) {
+                font-size: 18px;
+                left: 83px;
+                width: 200px;
+            }
+        }
+    }
+
+    .jobtitle {
+        font-size: 14px;
+        margin-top: -5px;
+    }
+}
+
+.testimonials-header {
+    .title {
+        margin-top: 0;
+    }
+}
+
+.testimonials-style-1 {
+    .testimonials-header {
+        min-height: 66px;
+    }
+}
+
+.testimonials-style-2 {
+    .testimonials-outer-wrap {
+        position: relative;
+
+        @media (max-width: ($screen-sm - 1px)) {
+            padding: 0 30px;
+        }
+    }
+}
+
+/* Testimonials style 3 */
+
+.testimonials-style-3 {
+    $spacing: 33px;
+    $spacing-mobile: 13px;
+
+    .testimonials-wrap {
+        margin-bottom: -$spacing-mobile;
+        margin-left: -$spacing-mobile;
+        margin-right: -$spacing-mobile;
+        padding: 0;
+
+        @media (min-width: $screen-md) {
+            margin-bottom: -$spacing;
+            margin-left: -$spacing;
+            margin-right: -$spacing;
+        }
+
+        > li {
+            float: left;
+            list-style: none;
+            margin-bottom: $spacing-mobile;
+            overflow: hidden;
+            padding-left: $spacing-mobile;
+            padding-right: $spacing-mobile;
+            position: relative;
+
+            @media (min-width: 600px) {
+                width: 50%;
+            }
+
+            @media (min-width: $screen-md) {
+                margin-bottom: $spacing*2;
+                padding-left: $spacing;
+                padding-right: $spacing;
+
+                &:hover,
+                &:focus {
+                    &::before {
+                        background-color: rgba(0, 0, 0, .7);
+                    }
+
+                    .content {
+                        transform: translateY(-115px);
+
+                        p {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+
+            &::before {
+                background-color: rgba(0, 0, 0, .3);
+                content: "";
+                height: 100%;
+                left: $spacing-mobile;
+                position: absolute;
+                right: $spacing-mobile;
+                top: 0;
+                transition: .3s background-color ease-in-out;
+
+                @media (min-width: $screen-md) {
+                    left: $spacing;
+                    right: $spacing;
+                }
+            }
+        }
+
+        .content {
+            $content-spacing-mobile: $spacing-mobile + 20px;
+            $content-spacing: $spacing + 40px;
+            $bottom-spacing-mobile: 17px;
+            $bottom-spacing: 37px;
+
+            bottom: $bottom-spacing-mobile;
+            color: #fff;
+            left: $content-spacing-mobile;
+            position: absolute;
+            right: $content-spacing-mobile;
+            transition: .3s transform;
+            will-change: transform;
+
+            @media (min-width: $screen-md) {
+                bottom: $bottom-spacing;
+                left: $content-spacing;
+                right: $content-spacing;
+            }
+
+            p {
+                font-style: italic;
+                padding-left: 30px;
+                position: absolute;
+                transform: translateY(37px);
+                transition: .5s transform;
+                will-change: transform;
+
+                &::before {
+                    content: "\f10e";
+                    font-family: "FontAwesome";
+                    font-size: 18px;
+                    font-style: normal;
+                    left: 0;
+                    position: absolute;
+                    top: 3px;
+                }
+            }
+        }
+
+        .jobtitle {
+            color: inherit;
+        }
+
+        .name-user {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+/* ## WPML */
+
+.lang_sel_sel {
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    z-index: 22;
+}
+
+.widget_icl_lang_sel_widget {
+    position: relative;
+
+    #lang_sel {
+        z-index: 2;
+    }
+}
+
+#lang_sel img.iclflag {
+    top: 0;
+}
+
+.widget_icl_lang_sel_widget #lang_sel > ul,
+.widget_icl_lang_sel_widget #lang_sel_click > ul {
+    margin-top: 5px !important;
+    padding: 0 !important;
+
+    li {
+        min-height: 40px;
+    }
+
+    a {
+        line-height: 30px;
+        text-align: left;
+
+        span {
+            text-align: left;
+            width: 100%;
+        }
+    }
+
+    ul {
+        top: 31px;
+    }
+}
+
+.above-nav-bar {
+    .widget_icl_lang_sel_widget #lang_sel > ul {
+        margin-top: 12px !important;
+    }
+
+    .widget_icl_lang_sel_widget #lang_sel_click {
+        top: 20px;
+    }
+}
+
+aside {
+    #lang_sel,
+    .widget_icl_lang_sel_widget #lang_sel > ul li,
+    .widget_icl_lang_sel_widget #lang_sel ul,
+    .widget_icl_lang_sel_widget #lang_sel_click,
+    .widget_icl_lang_sel_widget #lang_sel_click > ul li,
+    .widget_icl_lang_sel_widget #lang_sel_click ul {
+        width: 100%;
+    }
+}
+
+#lang_sel a.lang_sel_sel {
+    background-position: 93% 50%;
+}
+
+/* List */
+
+#lang_sel_list {
+    top: 9px;
+}
+
+#lang_sel_list ul li {
+    min-height: 22px;
+
+    a {
+        padding: 5px !important;
+    }
+}
+
+.above-nav-bar {
+    #lang_sel_list {
+        top: 15px;
+    }
+}
+
+#lang_sel > ul li:hover > a,
+#lang_sel a:hover {
+    background: #f8f9f9;
+}
+
+#lang_sel a.lang_sel_sel {
+    color: #898989;
+}
+
+/* Top bar */
+
+.top-bar #lang_sel a.lang_sel_sel {
+    background-color: transparent;
+    border: none;
+    margin-top: 2px;
+}

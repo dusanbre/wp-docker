@@ -1,0 +1,93 @@
+/* ## Gallery FS */
+
+.gallery-fs {
+    border: 1px solid $border-color;
+    overflow: hidden;
+
+    figure {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .owl-item {
+        img {
+            border-radius: 3px;
+        }
+
+        a {
+            display: block;
+            margin: 0 2px;
+            position: relative;
+
+            &::after {
+                border: 3px solid transparent;
+                border-radius: 3px;
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                transition: .3s border-color;
+                width: 100%;
+            }
+        }
+    }
+
+    .gallery-fs-fullscreen,
+    .owl-nav > * {
+        background: transparent;
+        border: 1px solid;
+        border-radius: 3px;
+        color: #ccc;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        height: 37px;
+        opacity: 1;
+        padding: 0;
+        position: relative;
+        width: 37px;
+
+        + * {
+            margin-left: 6px;
+        }
+
+        i {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        right: 21px;
+        top: -49px;
+    }
+
+    figcaption {
+        min-height: 57px;
+        padding: 19px 150px 19px 21px;
+    }
+
+    .gallery-fs-nav {
+        position: relative;
+    }
+
+    .gallery-fs-fullscreen {
+        background: none;
+        bottom: 11px;
+        position: absolute;
+        right: 106px;
+    }
+}
+
+.gallery-fs-thumbnails {
+    border-top: 1px solid $border-color;
+    padding: 18px 21px;
+}

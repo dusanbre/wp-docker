@@ -1,0 +1,150 @@
+/* ## Team With Description */
+
+.team-desc {
+    $padding: 21px;
+
+    display: table;
+
+    .team {
+        margin-left: -$padding;
+        margin-right: -$padding;
+    }
+
+    .member {
+        padding-left: $padding;
+        padding-right: $padding;
+    }
+
+    .member-wrap {
+        background-color: #fff;
+    }
+
+    .member-desc,
+    .member-title,
+    .member-wrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .member-desc,
+    .member-image,
+    .member-title {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+/* ### Sizes */
+
+.team-desc-size-1 {
+    .member {
+        width: 100%;
+    }
+
+    @media (max-width: 549px) {
+        .team-desc-side {
+            margin-top: 30px;
+        }
+    }
+
+    @media (min-width: 550px) {
+        .team-desc-main,
+        .team-desc-side {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .team-desc-side {
+            padding-left: 30px;
+            width: 60%;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        .team-desc-side {
+            padding-left: 30px;
+            width: 60%;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        .team-desc-side {
+            width: 70%;
+        }
+    }
+}
+
+.team-desc-size-2 {
+    @media (max-width: ($screen-md - 1px)) {
+        .team-desc-side {
+            margin-top: 30px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        .team-desc-main,
+        .team-desc-side {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .team-desc-side {
+            padding-left: 30px;
+            width: 55%;
+        }
+
+        .member {
+            width: 50%;
+        }
+    }
+}
+
+.team-desc-size-3 {
+    @media (max-width: ($screen-md - 1px)) {
+        .team-desc-side {
+            margin-top: 30px;
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        .team-desc-main,
+        .team-desc-side {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .team-desc-side {
+            padding-left: 30px;
+            width: 33.5%;
+        }
+
+        .member {
+            width: 33%;
+        }
+    }
+}
+
+/* ### Content Elements */
+
+.team-desc-side {
+    *:first-child {
+        margin-top: 0;
+    }
+}
+
+.team-desc-title {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.team-desc-description {
+    color: #a3baca;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.btn.team-desc-btn {
+    margin-top: 30px;
+}

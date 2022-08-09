@@ -1,0 +1,44 @@
+.anps-menu-toggle {
+    appearance: none;
+    background: none;
+    border: 1px solid;
+    border-radius: 3px;
+    color: var(--anps-menu-mobile-icons);
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    flex-shrink: 0;
+    margin-left: 15px;
+    position: relative;
+    width: 40px;
+
+    .anps-header--sticky & {
+        color: var(--anps-sticky-color);
+    }
+
+    .fa {
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media (min-width: 1200px) {
+        display: none;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &--sidebar {
+        margin: 10px 10px 0;
+        border-color: #fff;
+        color: #fff;
+    }
+}
+
+.anps-show-mobile-menu .anps-header__content  .anps-menu-toggle {
+    display: none;
+}

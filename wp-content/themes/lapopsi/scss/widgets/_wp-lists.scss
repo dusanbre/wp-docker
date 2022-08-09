@@ -1,0 +1,115 @@
+/* WordPress default "list" widgets */
+
+.sidebar {
+    .widget_archive,
+    .widget_categories,
+    .widget_layered_nav,
+    .widget_meta,
+    .widget_pages,
+    .widget_product_categories,
+    .widget_recent_comments,
+    .widget_recent_entries {
+        $padding: 5px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: $padding 0;
+
+            &:first-of-type {
+                padding-top: 0;
+            }
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        a {
+            display: inline-block;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+
+        /* Children */
+
+        .children {
+            margin-bottom: -$padding;
+            margin-top: $padding;
+
+            li {
+                padding-left: 15px;
+
+                &:first-of-type {
+                    padding-top: $padding;
+                }
+
+                &:last-of-type {
+                    padding-bottom: none;
+                }
+            }
+        }
+    }
+
+    .widget_categories {
+        .cat-item {
+            position: relative;
+            padding: 2px 0 2px 20px !important;
+
+            &:before {
+                content: '\f054';
+                color: var(--anps-sticky-color--active) !important;
+                font-family: FontAwesome;
+                font-size: 12px;
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: inline-block;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .widget_recent_entries {
+        li {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+        }
+    }
+}
+
+.site-footer__main {
+    .menu,
+    .widget_archive,
+    .widget_categories,
+    .widget_layered_nav,
+    .widget_meta,
+    .widget_pages,
+    .widget_product_categories,
+    .widget_recent_comments,
+    .widget_recent_entries {
+        li {
+            + li {
+                margin-top: 10px;
+            }
+        }
+
+        a {
+            display: inline-block;
+        }
+
+        /* Children */
+
+        .sub-menu,
+        .children {
+            margin-top: 15px;
+            padding-left: 15px;
+        }
+    }
+}
