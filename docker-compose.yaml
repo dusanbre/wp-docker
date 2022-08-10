@@ -6,27 +6,28 @@ services:
     image: wordpress:latest
     restart: always
     ports:
-      - 8080:80
+      - "${WPBP_MYSQL_PORT:-8080}:80"
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: lapopsi
-      WORDPRESS_DB_PASSWORD: lapopsi
-      WORDPRESS_DB_NAME: lapopsidb
+      WORDPRESS_DB_USER: ${WP_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WP_DB_NAME}
+      WORDPRESS_CONFIG_EXTRA: ${WP_CONFIG_EXTRA}
     volumes:
       - wordpress:/var/www/html
-      - ./wp-content:/var/www/html/wp-content
+      - ./wp-content:/var/www/html/wp-content:rw
     depends_on:
       - db
 
   db:
-    image: mysql:8.0
+    image: mysql:latest
     restart: always
     ports:
-      - 3306:3306
+      - "${WP_MYSQL_PORT:-3306}:3306"
     environment:
-      MYSQL_DATABASE: lapopsidb
-      MYSQL_USER: lapopsi
-      MYSQL_PASSWORD: lapopsi
+      MYSQL_DATABASE: ${WP_DB_NAME}
+      MYSQL_USER: ${WP_DB_USER}
+      MYSQL_PASSWORD: ${WP_DB_PASSWORD}
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db-data:/var/lib/mysql
