@@ -2,6 +2,7 @@
 /*
 !.gitignore
 !.env.example
+!init.sh
 !README.md
 !docker-compose.yaml
 
