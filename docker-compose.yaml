@@ -33,6 +33,22 @@ services:
     volumes:
       - db-data:/var/lib/mysql
 
+  wpcli:
+    image: wordpress:cli
+    user: 1000:1000
+    command: tail -f /dev/null
+    volumes:
+      - wordpress:/var/www/html:rw
+      - ./wp-content:/var/www/html/wp-content:rw
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${WP_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${WP_DB_NAME}
+      WORDPRESS_CONFIG_EXTRA: ${WP_CONFIG_EXTRA}
+    depends_on:
+      - wordpress
+
 volumes:
   wordpress:
   db-data:
