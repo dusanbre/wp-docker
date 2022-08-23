@@ -12,3 +12,4 @@
 ### Note
 
 When docker pull all images and finish setup, you will get more files in `wp-conetnt`. To add you theme and plugins, you can install it through dashboard, or copy files and folders in themes or plugins dir.
+You also need to update `.gitigonre` file.

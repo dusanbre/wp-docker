@@ -16,13 +16,13 @@ wp-content/plugins
 !wp-content/plugins
 
 wp-content/themes/*
-!wp-content/themes/lapopsi
-!wp-content/themes/lapopsi-child
+!wp-content/themes/yourtheme
+!wp-content/themes/yourtheme-child
 
-wp-content/themes/lapopsi/node_modules
-wp-content/themes/lapopsi-child/node_modules
+wp-content/themes/yourtheme/node_modules
+wp-content/themes/yourtheme-child/node_modules
 
 wp-content/plugins/*
-!wp-content/plugins/anps_theme_plugin
+!wp-content/plugins/yourtheme
 
 
